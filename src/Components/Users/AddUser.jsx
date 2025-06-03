@@ -3,14 +3,14 @@ import Card from '../UI/Card';
 import './AddUser.css';
 import Button from '../UI/Button';
 
-const AddUser = () => {
+const AddUser = (props) => {
   const [userName, setUserName] = useState('');
   const [age, setAge] = useState('');
 
   const addUserHandler = (event) => {
     event.preventDefault();
     if (userName.length > 0 && age.length > 0) {
-      age > 0 && console.log(userName, age);
+      age > 0 && props.onAddUser(userName, age);
     }
 
     setUserName('');
